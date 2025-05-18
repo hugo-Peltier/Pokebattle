@@ -1,0 +1,152 @@
+﻿Nom;Type1;Type2;HP;Attaque1;Puissance1;Attaque2;Puissance2
+Abo;Poison;;35;Morsure;60;Ligotage;35
+Abra;Psy;;25;Choc Mental;50;Choc Mental +;50
+Aéromite;Insecte;Poison;70;Cru-Ailes;85;Toxik;65
+Akwakwak;Eau;;80;Hydrocanon;110;Hydrocanon +;110
+Alakazam;Psy;;55;Psyko;120;Psyko +;120
+Amonistar;Roche;Eau;70;Hydrocanon;110;Hydrocanon +;110
+Amonita;Roche;Eau;35;Éboulement;80;Éboulement +;80
+Aquali;Eau;;130;Hydrocanon;110;Hydrocanon +;110
+Arbok;Poison;;60;Acide;85;Poinglace;50
+Arcanin;Feu;;90;Déflagration;120;Déflagration +;120
+Artikodin;Glace;Vol;90;Blizzard;125;Blizzard +;125
+Aspicot;Insecte;Poison;40;Dard-Venin;50;Picpic;30
+Boustiflor;Plante;Poison;65;Acide;80;Acide +;80
+Bulbizarre;Plante;Poison;45;Fouet Lianes;60;Tranch’Herbe;40
+Canarticho;Normal;Vol;52;Coupe;70;Coupe +;70
+Caninos;Feu;;55;Flammèche;75;Flammèche +;75
+Carabaffe;Eau;;59;Hydrocanon;80;Bulles d'O;55
+Carapuce;Eau;;44;Pistolet à O;65;Écume;40
+Chétiflor;Plante;Poison;50;Tranch’Herbe;60;Tranch’Herbe +;60
+Chenipan;Insecte;;45;Charge;50;Rugissement;20
+Chrysacier;Insecte;;50;Armure;30;Charge;20
+Coconfort;Insecte;Poison;45;Armure;40;Dard-Venin;20
+Colossinge;Combat;;65;Poing de Feu;95;Poing de Feu +;95
+Crustabri;Eau;Glace;50;Laser Glace;85;Laser Glace +;85
+Dardargnan;Insecte;Poison;65;Furie;120;Toxik;60
+Dodrio;Normal;Vol;60;Drill-Peck;100;Drill-Peck +;100
+Doduo;Normal;Vol;35;Cru-Ailes;75;Cru-Ailes +;75
+Dracaufeu;Feu;Vol;78;Déflagration;110;Danseflamme;70
+Draco;Dragon;;61;Vive-Attaque;110;Vive-Attaque +;110
+Dracolosse;Dragon;Vol;91;Colère;140;Colère +;140
+Ectoplasma;Spectre;Poison;60;Ball’Ombre;120;Ball’Ombre +;120
+Électhor;Électrik;Vol;90;Fatal-Foudre;125;Fatal-Foudre +;125
+Électrode;Électrik;;60;Tonnerre;95;Tonnerre +;95
+Élektek;Électrik;;65;Tonnerre;110;Tonnerre +;110
+Empiflor;Plante;Poison;80;Lance-Soleil;100;Lance-Soleil +;100
+Évoli;Normal;;55;Morsure;70;Morsure +;70
+Excelangue;Normal;;90;Léchouille;85;Léchouille +;85
+Férosinge;Combat;;40;Poing-Karate;65;Poing-Karate +;65
+Fantominus;Spectre;Poison;30;Léchouille;60;Léchouille +;60
+Feunard;Feu;;73;Déflagration;100;Lance-Flammes;80
+Flagadoss;Eau;Psy;95;Psyko;110;Psyko +;110
+Florizarre;Plante;Poison;80;Lance-Soleil;100;Bomb-Beurk;80
+Galopa;Feu;;65;Déflagration;110;Déflagration +;110
+Goupix;Feu;;38;Flammèche;55;Rugissement;20
+Gravalanch;Roche;Sol;55;Éboulement;80;Éboulement +;80
+Grodoudou;Normal;Fée;140;Métronome;70;Coud’Krâne;90
+Grolem;Roche;Sol;80;Explosion;120;Explosion +;120
+Grotadmorv;Poison;;105;Toxik;95;Toxik +;95
+Herbizarre;Plante;Poison;60;Tranch’Herbe;80;Lance-Soleil;60
+Hypnomade;Psy;;85;Psyko;100;Psyko +;100
+Hypocéan;Eau;;55;Hydrocanon;90;Hydrocanon +;90
+Hypotrempe;Eau;;30;Pistolet à O;55;Pistolet à O +;55
+Insécateur;Insecte;Vol;70;Cru-Ailes;110;Cru-Ailes +;110
+Kabuto;Roche;Eau;30;Tranche;75;Tranche +;75
+Kabutops;Roche;Eau;60;Lame de Roc;115;Lame de Roc +;115
+Kadabra;Psy;;40;Psyko;90;Psyko +;90
+Kangourex;Normal;;105;Uppercut;95;Uppercut +;95
+Kicklee;Combat;;50;Pied-Voltige;120;Pied-Voltige +;120
+Kokiyas;Eau;;30;Écume;55;Écume +;55
+Krabboss;Eau;;55;Hydroqueue;95;Hydroqueue +;95
+Krabby;Eau;;30;Pince-Masse;75;Pince-Masse +;75
+Léviator;Eau;Vol;95;Hydroqueue;120;Hydroqueue +;120
+Lamantine;Eau;Glace;90;Blizzard;110;Blizzard +;110
+Leveinard;Normal;;250;Écras’Face;55;Écras’Face +;55
+Lippoutou;Glace;Psy;65;Blizzard;115;Blizzard +;115
+Lokhlass;Eau;Glace;130;Laser Glace;120;Laser Glace +;120
+Mélodelfe;Fée;;95;Vague Psy;80;Météores;60
+Mélofée;Fée;;70;Métronome;60;Écras’Face;40
+Métamorph;Normal;;48;Morphing;0;Morphing +;0
+Machoc;Combat;;70;Balayage;60;Balayage +;60
+Machopeur;Combat;;80;Dynamopoing;85;Dynamopoing +;85
+Mackogneur;Combat;;90;Coup Cross;120;Coup Cross +;120
+Magicarpe;Eau;;20;Éclaboussure;10;Éclaboussure +;10
+Magmar;Feu;;65;Déflagration;110;Déflagration +;110
+Magnéti;Électrik;Acier;25;Éclair;55;Éclair +;55
+Magnéton;Électrik;Acier;50;Tonnerre;95;Tonnerre +;95
+Mew;Psy;;100;Métronome;100;Métronome +;100
+Mewtwo;Psy;;106;Psyko;150;Psyko +;150
+Miaouss;Normal;;40;Griffe;55;Griffe +;55
+Mime;Psy;Fée;40;Mur Lumière;100;Mur Lumière +;100
+Mimitoss;Insecte;Poison;60;Poudre Dodo;60;Vampirisme;50
+Minidraco;Dragon;;41;Draco-Rage;90;Draco-Rage +;90
+Mystherbe;Plante;Poison;45;Poudre Toxik;55;Vampigraine;40
+Nœunœuf;Plante;Psy;60;Choc Mental;65;Choc Mental +;65
+Nidoking;Poison;Sol;81;Poing-Karate;105;Séisme;95
+Nidoqueen;Poison;Sol;90;Coup de Boule;110;Poing-Karaté;90
+NidoranaF;Poison;;55;Dard-Venin;60;Morsure;40
+NidoranaM;Poison;;46;Dard-Venin;55;Charge;35
+Nidorina;Poison;;70;Morsure;80;Dard-Nuée;60
+Nidorino;Poison;;61;Coup de Boule;75;Morsure;65
+Noadkoko;Plante;Psy;95;Lance-Soleil;120;Lance-Soleil +;120
+Nosferalto;Poison;Vol;75;Cru-Ailes;80;Toxik;60
+Nosferapti;Poison;Vol;40;Vampirisme;60;Cru-Ailes;45
+Onix;Roche;Sol;35;Queue de Fer;70;Queue de Fer +;70
+Ortide;Plante;Poison;60;Acide;75;Tranch’Herbe;65
+Ossatueur;Sol;;60;Massd’Os;95;Massd’Os +;95
+Osselait;Sol;;50;Massd’Os;70;Massd’Os +;70
+Otaria;Eau;;65;Aurora Beam;70;Aurora Beam +;70
+Papilusion;Insecte;Vol;60;Poudre Dodo;70;Cyclone;40
+Paras;Insecte;Plante;35;Spore;55;Poudre Toxik;45
+Parasect;Insecte;Plante;60;Tranch’Herbe;85;Canon Graine;65
+Persian;Normal;;65;Morsure;90;Morsure +;90
+Piafabec;Normal;Vol;40;Picpic;60;Griffure;40
+Pikachu;Électrik;;35;Éclair;70;Tonnerre;100
+Poissirène;Eau;;45;Picpic;65;Picpic +;65
+Poissoroy;Eau;;80;Hydroqueue;95;Hydroqueue +;95
+Ponyta;Feu;;50;Flammèche;65;Flammèche +;65
+Porygon;Normal;;65;Vague Psy;90;Vague Psy +;90
+Psykokwak;Eau;;50;Choc Mental;60;Choc Mental +;60
+Ptéra;Roche;Vol;80;Cru-Ailes;120;Cru-Ailes +;120
+Ptitard;Eau;;40;Pistolet à O;55;Pistolet à O +;55
+Pyroli;Feu;;65;Déflagration;110;Déflagration +;110
+Racaillou;Roche;Sol;40;Jet-Pierres;60;Jet-Pierres +;60
+Rafflesia;Plante;Poison;75;Lance-Soleil;100;Poudre Dodo;70
+Raichu;Électrik;;60;Tonnerre;100;Fatal-Foudre;120
+Ramoloss;Eau;Psy;90;Pistolet à O;60;Pistolet à O +;60
+Rapasdepic;Normal;Vol;65;Drill-Peck;100;Cru-Ailes;70
+Rattata;Normal;;30;Morsure;75;Charge;40
+Rattatac;Normal;;55;Tranche;110;Croc Fatal;80
+Reptincel;Feu;;58;Lance-Flammes;85;Crocs Feu;65
+Rhinocorne;Sol;Roche;80;Éboulement;85;Éboulement +;85
+Rhinoféros;Sol;Roche;105;Séisme;120;Séisme +;120
+Rondoudou;Normal;Fée;115;Berceuse;50;Roulade;40
+Ronflex;Normal;;160;Coud’Krâne;110;Coud’Krâne +;110
+Roucarnage;Normal;Vol;83;Lame d’Air;100;Ouragan;90
+Roucool;Normal;Vol;40;Tornade;60;Picpic;35
+Roucoups;Normal;Vol;63;Cru-Ailes;80;Tornade;60
+Sabelette;Sol;;50;Griffe;60;Jet de Sable;40
+Sablaireau;Sol;;75;Jet de Sable;85;Séisme;100
+Salamèche;Feu;;39;Flammèche;70;Griffe;50
+Saquedeneu;Plante;;65;Tranch’Herbe;80;Tranch’Herbe +;80
+Scarabrute;Insecte;;65;Coup de Boule;125;Coup de Boule +;125
+Smogo;Poison;;40;Toxik;60;Toxik +;60
+Smogogo;Poison;;65;Purédpois;95;Purédpois +;95
+Soporifik;Psy;;60;Choc Mental;60;Choc Mental +;60
+Spectrum;Spectre;Poison;45;Ball’Ombre;90;Ball’Ombre +;90
+Stari;Eau;;30;Laser Glace;75;Laser Glace +;75
+Staross;Eau;Psy;60;Psyko;120;Psyko +;120
+Sulfura;Feu;Vol;90;Lance-Flammes;125;Lance-Flammes +;125
+Têtarte;Eau;;65;Hydroqueue;75;Hydroqueue +;75
+Tadmorv;Poison;;80;Acide;70;Acide +;70
+Tartard;Eau;Combat;90;Onde Boréale;110;Onde Boréale +;110
+Taupiqueur;Sol;;10;Tunnel;80;Tunnel +;80
+Tauros;Normal;;75;Charge;100;Charge +;100
+Tentacool;Eau;Poison;40;Acide;55;Acide +;55
+Tentacruel;Eau;Poison;80;Hydrocanon;95;Hydrocanon +;95
+Tortank;Eau;;79;Hydroblast;105;Mégapunch;90
+Triopikeur;Sol;;35;Tunnel;100;Tunnel +;100
+Tygnon;Combat;;50;Poing-Karaté;100;Poing-Karaté +;100
+Voltali;Électrik;;65;Tonnerre;110;Tonnerre +;110
+Voltorbe;Électrik;;40;Éclair;55;Éclair +;55
