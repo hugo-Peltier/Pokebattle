@@ -89,5 +89,5 @@ if (!MODE_SILENCIEUX) {
     std::system("clear");
     menu_principal(joueur);
 }
-
-} // namespace ui
+// @hugop
+} 

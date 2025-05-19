@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <cctype>
 
-// Fonction utilitaire de normalisation des noms
+
 std::string normaliser_nom(const std::string& s) {
     std::string resultat = s;
     std::vector<std::pair<std::string, std::string>> remplacements = {
@@ -30,7 +30,7 @@ std::string normaliser_nom(const std::string& s) {
     return resultat;
 }
 
-// Chargement des Pokémon depuis le CSV
+// @hugop
 std::vector<Pokemon> charger_pokemons(const std::string& chemin) {
     std::vector<Pokemon> pokemons;
     std::ifstream fichier(chemin);
@@ -41,7 +41,7 @@ std::vector<Pokemon> charger_pokemons(const std::string& chemin) {
         return pokemons;
     }
 
-    std::getline(fichier, ligne); // ignorer l'en-tête
+    std::getline(fichier, ligne); 
 
     int ligne_num = 1;
     while (std::getline(fichier, ligne)) {
@@ -84,7 +84,7 @@ std::vector<Pokemon> charger_pokemons(const std::string& chemin) {
             pow2 = std::stoi(pow2_str);
         } catch (...) {
             std::cerr << "[AVERTISSEMENT] Puissance 2 invalide pour " << nom << " ligne " << ligne_num << " : '" << pow2_str << "' (valeur 0 utilisée)\n";
-            pow2 = 0; // on accepte puissance 2 vide
+            pow2 = 0;
         }
 
         std::vector<std::string> types = { type1 };
@@ -104,7 +104,7 @@ std::vector<Pokemon> charger_pokemons(const std::string& chemin) {
 
 
 
-// Recherche des Pokémon à partir de noms
+
 std::vector<Pokemon> trouver_equipe_pokemon(const std::vector<std::string>& noms) {
     std::vector<Pokemon> equipe;
     auto tous = charger_pokemons(PATH_POKEMON);
@@ -117,13 +117,13 @@ std::vector<Pokemon> trouver_equipe_pokemon(const std::vector<std::string>& noms
     return equipe;
 }
 
-// Chargement des joueurs
+
 std::vector<Joueur> charger_joueurs_par_gymnase(const std::string& gymnase) {
     std::vector<Joueur> joueurs;
     std::ifstream fichier(PATH_JOUEURS);
     std::string ligne;
 
-    std::getline(fichier, ligne); // Ignorer l'en-tête
+    std::getline(fichier, ligne); 
 
     while (std::getline(fichier, ligne)) {
         std::stringstream ss(ligne);
@@ -170,7 +170,7 @@ std::vector<Joueur> charger_tous_les_joueurs() {
 
     if (!fichier.is_open()) return joueurs;
 
-    std::getline(fichier, ligne); // Ignorer l'en-tête
+    std::getline(fichier, ligne); 
 
     while (std::getline(fichier, ligne)) {
         std::stringstream ss(ligne);
@@ -210,13 +210,14 @@ std::vector<Joueur> charger_tous_les_joueurs() {
     return joueurs;
 }
 
-// Chargement du Leader
+
 Leader charger_leader_par_gymnase(const std::string& gymnase) {
     std::ifstream fichier(PATH_LEADERS);
     std::string ligne;
     if (!fichier.is_open()) return Leader("Inconnu", gymnase, "", {});
 
-    std::getline(fichier, ligne); // Ignorer l'en-tête
+    std::getline(fichier, ligne); 
+    // @hugop
 
     auto normaliser = [](std::string s) {
         std::transform(s.begin(), s.end(), s.begin(), ::tolower);
@@ -239,7 +240,7 @@ Leader charger_leader_par_gymnase(const std::string& gymnase) {
     };
 
     const std::string gymnase_net = normaliser(gymnase);
-
+// @hugop
     while (std::getline(fichier, ligne)) {
         std::stringstream ss(ligne);
         std::string nom, gym, badge, champ;
@@ -255,7 +256,7 @@ Leader charger_leader_par_gymnase(const std::string& gymnase) {
         }
 
         std::string phrase;
-        std::getline(ss, phrase);  // Phrase finale ignorée
+        std::getline(ss, phrase);  
 
         if (normaliser(gym) == gymnase_net)
             return Leader(nom, gym, badge, equipe);
@@ -264,13 +265,13 @@ Leader charger_leader_par_gymnase(const std::string& gymnase) {
     return Leader("Inconnu", gymnase, "", {});
 }
 
-// Chargement des Maîtres
+
 std::vector<Maitre> charger_maitres() {
     std::vector<Maitre> maitres;
     std::ifstream fichier(PATH_MAITRES);
     std::string ligne;
 
-    std::getline(fichier, ligne); // Ignorer l'en-tête
+    std::getline(fichier, ligne); 
 
     while (std::getline(fichier, ligne)) {
         std::stringstream ss(ligne);

@@ -4,8 +4,9 @@
 #include "Joueur.hpp"
 
 namespace ui {
-    void menu_combat(Joueur& joueur);     // Nouveau sous-menu "Mode Combat"
-    void menu_gymnase(Joueur& joueur);    // Infos gymnase (affichage)
+    void menu_combat(Joueur& joueur);     
+    void menu_gymnase(Joueur& joueur);    
 }
 
 #endif
+// @hugop

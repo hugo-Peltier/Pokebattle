@@ -8,7 +8,7 @@ private:
     int badges;
     int victoires;
     int defaites;
-    std::string phrase; // ✅ nouvelle propriété
+    std::string phrase; 
 
 public:
     Joueur(std::string nom);
@@ -23,11 +23,11 @@ public:
     void ajouterBadge();
     void afficherStatistiques() const;
 
-    std::string getPhrase() const;           // ✅ accesseur
-    void setPhrase(const std::string& p);    // ✅ mutateur
-
-    std::vector<Pokemon>& getEquipe();                   // modifiable
-    const std::vector<Pokemon>& getEquipe() const;       // lecture seule
+    std::string getPhrase() const;          
+    void setPhrase(const std::string& p);    
+    std::vector<Pokemon>& getEquipe();                  
+    const std::vector<Pokemon>& getEquipe() const;       
 };
 
 #endif
+// @hugop

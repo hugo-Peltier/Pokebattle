@@ -9,3 +9,4 @@ const std::string PATH_LEADERS = "data/leaders.csv";
 const std::string PATH_MAITRES = "data/maitres.csv";
 inline bool MODE_SILENCIEUX = true;
 #endif
+// @hugop

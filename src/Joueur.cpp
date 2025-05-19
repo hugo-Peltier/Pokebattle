@@ -31,7 +31,7 @@ void Joueur::setPhrase(const std::string& p) {
     phrase = p;
 }
 
-// ✅ méthodes d'accès à l'équipe
+
 std::vector<Pokemon>& Joueur::getEquipe() {
     return equipe;
 }
@@ -39,3 +39,4 @@ std::vector<Pokemon>& Joueur::getEquipe() {
 const std::vector<Pokemon>& Joueur::getEquipe() const {
     return equipe;
 }
+// @hugop

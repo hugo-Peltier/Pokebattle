@@ -51,7 +51,7 @@ void menu_combat(Joueur& joueur) {
     if (!confirmed) return;
 
     switch (selected) {
-        case 0: { // Combattre un Gymnase
+        case 0: { 
             std::vector<std::string> gymnases = {
                 "Carmin sur Mer", "Celadopole", "Safrania", "CramoisIle"
             };
@@ -100,9 +100,9 @@ auto adversaires = charger_joueurs_par_gymnase(gym);
             break;
         }
 
-       case 1: { // Affronter un Maître
+       case 1: { 
             if (joueur.getBadges() < 4) {
-                std::cout << "🔒 Il vous faut 4 badges pour affronter un Maître Pokémon.\n";
+                std::cout << "C'est LOCK🔒. Et oui il vous faut 4 badges pour affronter un Maître Pokémon.\n";
                 std::cin.ignore();
                 std::cin.get();
                 return;
@@ -142,8 +142,9 @@ auto adversaires = charger_joueurs_par_gymnase(gym);
             }
             break;
         }
-        case 2: { // Affronter un autre joueur (hors gymnase)
-            auto joueurs = charger_tous_les_joueurs();  // 🔄 Nouvelle fonction que tu ajoutes dans ChargeurCSV
+
+        case 2: { 
+            auto joueurs = charger_tous_les_joueurs(); 
             std::vector<Joueur> valides;
 
             for (const auto& j : joueurs) {
@@ -196,7 +197,7 @@ auto adversaires = charger_joueurs_par_gymnase(gym);
     std::vector<std::string> noms_poke;
     for (const auto& p : adv.getEquipe()) noms_poke.push_back(p.getNom());
 
-    std::cout << "\n🆚 Vous affrontez " << adv.getNom() << " !" << std::endl;
+    std::cout << "\n Vous affrontez le terrible adversaire nommé ... " << adv.getNom() << " !" << std::endl;
 
     if (!adv.getPhrase().empty())
         std::cout << "💬 " << adv.getPhrase() << std::endl;
@@ -212,7 +213,7 @@ auto adversaires = charger_joueurs_par_gymnase(gym);
         }
 case 3: {
     std::system("clear");
-    afficher_tableau_types();  // ✅ maintenant défini dans type_chart.cpp
+    afficher_tableau_types(); 
     break;
 }
 
@@ -263,8 +264,8 @@ void menu_gymnase(Joueur& joueur) {
     auto joueurs = charger_joueurs_par_gymnase(gym);
     auto leader = charger_leader_par_gymnase(gym);
 
-    std::cout << "\n🎯 GYMNASE : " << gym << "\n";
-    std::cout << "\n🏆 Leader : " << leader.getNom()
+    std::cout << "\nGYMNASE : " << gym << "\n";
+    std::cout << "\n Leader : " << leader.getNom()
               << " (badge : " << leader.getBadge() << ")\n   Équipe :\n";
 
     for (const auto& p : leader.getEquipe())
@@ -280,5 +281,5 @@ void menu_gymnase(Joueur& joueur) {
     std::cin.get();
     std::system("clear");
 }
-
-} // namespace ui
+// @hugop
+} 

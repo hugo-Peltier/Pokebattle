@@ -17,7 +17,7 @@
 
 using namespace ftxui;
 
-// --- Affichage de la barre HP ---
+
 Element afficher_barre_HP(int hp, int max_hp) {
     int total_coeurs = 10;
     float ratio = static_cast<float>(hp) / max_hp;
@@ -26,13 +26,13 @@ Element afficher_barre_HP(int hp, int max_hp) {
     std::string bar;
     for (int i = 0; i < total_coeurs; ++i) {
         if (i + 1 <= cœurs_reels)
-            bar += "❤️";       // cœur plein
+            bar += "❤️";       
         else if (i < cœurs_reels)
-            bar += "💔";       // demi-cœur
+            bar += "💔";       
         else
-            bar += "🖤";       // vide
+            bar += "🖤";     
     }
-
+// @hugop
     return hbox({
         text(bar) | center,
         text(" " + std::to_string(hp) + "/" + std::to_string(max_hp)) | dim
@@ -41,7 +41,7 @@ Element afficher_barre_HP(int hp, int max_hp) {
 
 
 
-// --- Choix du Pokémon à envoyer ---
+
 int choisir_pokemon(Joueur& joueur, std::vector<bool>& ko_flags, ScreenInteractive& screen) {
     std::vector<std::string> noms;
     bool au_moins_un_disponible = false;
@@ -117,7 +117,7 @@ bool combat_simple(Joueur& joueur,
     bool a_change = false;
     bool afficher_menu_attaques = false;
 
-    // --- Afficher les types des Pokémon au début du combat ---
+    
     std::string types_joueur = joueur_poke.getTypes()[0];
     if (joueur_poke.getTypes().size() > 1)
         types_joueur += "/" + joueur_poke.getTypes()[1];
@@ -172,7 +172,7 @@ bool combat_simple(Joueur& joueur,
             if (attaque_sel >= 0 && attaque_sel < (int)attaques_valides.size()) {
                 const auto& attaque = attaques_valides[attaque_sel];
 
-                // --- Attaque du joueur ---
+             // @hugop
                 float mult = calculerMultiplicateurType(attaque.type, adv_poke.getTypes());
                 std::string effet_type;
                 if (mult > 1.0f)
@@ -183,8 +183,7 @@ bool combat_simple(Joueur& joueur,
                 int dmg1 = attaque.puissance * mult;
                 adv_poke.recevoirDegats(dmg1);
                 historique.push_back(joueur_poke.getNom() + " utilise " + attaque.nom + " : " + std::to_string(dmg1) + " dégâts !" + effet_type);
-
-                // --- Riposte de l'adversaire ---
+// @hugop
                 if (!adv_poke.estKo()) {
                     const auto& atk_adv = adv_poke.getAttaques().empty() ? Attaque{"Griffes", "Normal", 10} : adv_poke.getAttaques()[0];
 
@@ -298,12 +297,11 @@ bool combat_simple(Joueur& joueur,
 
 
 bool lancer_combat_contre(Joueur& joueur, const std::string& nom_adv, const std::vector<std::string>& equipe_adv_noms) {
-    // ✅ Charger l'équipe adverse UNE SEULE FOIS
+    
     std::vector<Pokemon> equipe_adv = trouver_equipe_pokemon(equipe_adv_noms);
 
     std::cout << "\n🆚 Combat contre " << nom_adv << " 🆚\n";
 
-    // ✅ Vérifie si tous les Pokémon du joueur sont déjà K.O.
     bool tous_ko = std::all_of(joueur.getEquipe().begin(), joueur.getEquipe().end(),
                                [](const Pokemon& p) { return p.estKo(); });
     if (tous_ko) {
@@ -312,7 +310,7 @@ bool lancer_combat_contre(Joueur& joueur, const std::string& nom_adv, const std:
         std::cin.get();
         return false;
     }
-
+// @hugop
     std::vector<bool> ko_joueur(joueur.getEquipe().size(), false);
     std::vector<bool> ko_adverse(equipe_adv.size(), false);
     int nb_pokemon_adverse = equipe_adv.size();
@@ -331,7 +329,7 @@ bool lancer_combat_contre(Joueur& joueur, const std::string& nom_adv, const std:
 
         if (std::all_of(ko_joueur.begin(), ko_joueur.end(), [](bool b) { return b; })) {
             std::cout << "\n❌ Tous vos Pokémon sont K.O.\n";
-            joueur.ajouterDefaite(); // ✅ Ajoute la défaite
+            joueur.ajouterDefaite(); 
             std::cout << "Appuyez sur Entrée pour continuer...\n";
             std::cin.ignore();
             std::cin.get();
@@ -344,19 +342,19 @@ bool lancer_combat_contre(Joueur& joueur, const std::string& nom_adv, const std:
 
         if (idx_adv >= equipe_adv.size()) continue;
 
-        // ✅ Combat simple entre le joueur et le Pokémon adverse (pas de rechargement)
+     // @hugop
         bool vainqueur = combat_simple(joueur, equipe_adv[idx_adv], ko_joueur, nb_pokemon_adverse, screen);
         if (vainqueur)
             ko_adverse[idx_adv] = true;
         else if (std::all_of(ko_joueur.begin(), ko_joueur.end(), [](bool b) { return !b; })) {
             std::cout << "🔙 Vous quittez le combat.\n";
-            joueur.ajouterDefaite(); // ✅ Optionnel mais cohérent si fuite = défaite
+            joueur.ajouterDefaite();
             return false;
         }
     }
 }
 
-
+// @hugop
 bool demander_confirmation(const std::string& message) {
     ScreenInteractive screen = ScreenInteractive::TerminalOutput();
     int selected = 0;
@@ -370,7 +368,7 @@ bool demander_confirmation(const std::string& message) {
             menu->Render() | border
         });
     });
-
+// @hugop
     screen.Loop(CatchEvent(renderer, [&](Event e) {
         if (e == Event::Return) {
             screen.Exit();
@@ -417,7 +415,7 @@ void lancer_combat_maitre(Joueur& joueur, const Maitre& maitre) {
     lancer_combat_contre(joueur, maitre.getNom(), noms);
     std::system("clear");
 
-    // 🎨 Couleurs vertes du plus clair au plus foncé (codes ANSI 256)
+    
     std::vector<int> verts = { 120, 34, 28, 22, 28, 34 };
 
     std::string ascii_victoire = R"(
@@ -442,7 +440,6 @@ void lancer_combat_maitre(Joueur& joueur, const Maitre& maitre) {
         ++ligne_num;
     }
 
-    // 🎉 Message de félicitations animé et centré
     std::string message = "🎉 Félicitations, vous avez vaincu le Maître Pokémon " + maitre.getNom() + " !";
     int pad_msg = std::max(0, (int)(80 - message.size()) / 2);
     std::cout << "\n" << std::string(pad_msg, ' ');
@@ -452,7 +449,6 @@ void lancer_combat_maitre(Joueur& joueur, const Maitre& maitre) {
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
     }
 
-    // Texte final centré
     std::string suite = "Appuyez sur Entrée pour continuer...";
     int pad_suite = std::max(0, (int)(80 - suite.size()) / 2);
     std::cout << "\n\n" << std::string(pad_suite, ' ') << suite << std::endl;
@@ -461,3 +457,4 @@ void lancer_combat_maitre(Joueur& joueur, const Maitre& maitre) {
     std::cin.get();
 }
 
+// @hugop

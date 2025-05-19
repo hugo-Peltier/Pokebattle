@@ -8,3 +8,4 @@ int calculerDegats(const Pokemon& attaquant, const Pokemon& defenseur) {
     float multiplicateur = calculerMultiplicateurType(attaque.type, defenseur.getTypes());
     return attaque.puissance * multiplicateur;
 }
+// @hugop

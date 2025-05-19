@@ -10,7 +10,8 @@ private:
 public:
     Maitre(std::string nom, std::string capacite_speciale, const std::vector<std::string>& equipe);
     std::string getCapacite() const;
-    void boosterEquipe();  // +25% dégâts
+    void boosterEquipe();  
 };
 
 #endif
+// @hugop

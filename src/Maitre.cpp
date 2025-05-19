@@ -17,7 +17,7 @@ std::string Maitre::getCapacite() const {
 void Maitre::boosterEquipe() {
     for (auto& p : equipe) {
         if (!p.getAttaques().empty()) {
-            // Boost uniquement la puissance de l’attaque principale
+            // @hugop
             Attaque& atk = p.getAttaques()[0];
             int ancienne_puissance = atk.puissance;
             atk.puissance = static_cast<int>(atk.puissance * 1.25f);
@@ -26,3 +26,4 @@ void Maitre::boosterEquipe() {
         }
     }
 }
+// @hugop

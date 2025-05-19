@@ -30,3 +30,4 @@ bool Entraineur::equipeVide() const {
 void Entraineur::interagir() const {
     std::cout << "👋 " << nom << " vous salue." << std::endl;
 }
+// @hugop

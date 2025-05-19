@@ -17,3 +17,4 @@ std::vector<Joueur> charger_tous_les_joueurs();
 void sauvegarderJoueur(const Joueur& joueur);
 
 #endif
+// @hugop

@@ -7,11 +7,11 @@
 
 #include <ftxui/component/screen_interactive.hpp>
 #include <ftxui/component/component.hpp>
-#include <SFML/Audio.hpp>  // 🔊 Ajout SFML pour le son
+#include <SFML/Audio.hpp>  
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-// 🎵 Audio global
+
 sf::SoundBuffer buffer_menu;
 sf::Sound sound_menu;
 bool son_menu_charge = false;
@@ -91,7 +91,7 @@ if (!MODE_SILENCIEUX) {
         std::vector<std::string> options = {
     "Créer mon équipe Pokémon",
     "Afficher mes Pokémon",
-    "🛠 Modifier mon équipe Pokémon",  // << AJOUT ICI
+    "Modifier mon équipe Pokémon",  
     "Mode Combat",
     "Afficher mes statistiques",
     "Soigner mes Pokémon",
@@ -138,7 +138,7 @@ if (!MODE_SILENCIEUX) {
         std::cout << "⚠️ Équipe déjà créée !\n";
         std::cin.ignore();
         std::cin.get();
-        break;  // ✅ Le break ne doit se faire QUE SI on veut quitter immédiatement.
+        break;  
     }
     bool terminer_creation = false;
 
@@ -171,7 +171,7 @@ if (!MODE_SILENCIEUX) {
     bool choisi = false;
     auto app = CatchEvent(renderer, [&](Event e) {
         if (e == Event::Return) {
-            if (selected_poke == 0) { // "J’ai fini"
+            if (selected_poke == 0) { 
                     if (joueur.getEquipe().size() >= 1) {
                         terminer_creation = true;
                     } else {
@@ -183,19 +183,19 @@ if (!MODE_SILENCIEUX) {
 
 
 
-else if (selected_poke == options_poke.size() - 1) { // "Annuler"
+else if (selected_poke == options_poke.size() - 1) { 
                     std::cout << "❌ Création annulée. Retour au menu principal.\n";
     std::cin.ignore();
     std::cin.get();
-    joueur.getEquipe().clear();      // (optionnel) Réinitialiser l'équipe
-    terminer_creation = true;       // Sortie de la boucle de création
-    screen2.Exit();                 // 🔁 QUITTE la boucle FTXUI
+    joueur.getEquipe().clear();      
+    terminer_creation = true;       
+    screen2.Exit();                 
                     return true;
 
 
 
 
-
+// @hugop
 
                 } else {
                     const auto& choix = pokemons[selected_poke - 1];
@@ -206,7 +206,7 @@ else if (selected_poke == options_poke.size() - 1) { // "Annuler"
                         joueur.ajouterPokemon(choix);
                     }
 
-                // ✅ Auto-valider si 6 atteints
+                
                 if (joueur.getEquipe().size() == 6) {
                     terminer_creation = true;
                 }
@@ -256,7 +256,7 @@ else if (selected_poke == options_poke.size() - 1) { // "Annuler"
             }
         }
 
-        std::cout << "\n";  // ✅ Affiche chaque Pokémon sur une ligne
+        std::cout << "\n";  
     }
 
     std::cout << "\nAppuyez sur Entrée pour continuer...\n";
@@ -284,7 +284,7 @@ else if (selected_poke == options_poke.size() - 1) { // "Annuler"
         break;
     }
 
-    // 🔁 Sauvegarder une copie originale
+    
     std::vector<Pokemon> equipe_originale = joueur.getEquipe();
 
     bool terminer_modif = false;
@@ -325,7 +325,7 @@ else if (selected_poke == options_poke.size() - 1) { // "Annuler"
         std::system("clear");
         if (!action) continue;
 
-        if (selected == 0) { // ✅ Valider
+        if (selected == 0) { 
             if (joueur.getEquipe().size() >= 1) {
                 sauvegarderJoueurTemporaire(joueur);
                 std::cout << "💾 Équipe sauvegardée avec succès.\n";
@@ -338,7 +338,7 @@ else if (selected_poke == options_poke.size() - 1) { // "Annuler"
                 std::cin.get();
             }
         }
-        else if (selected == 1) { // ➕ Ajouter
+        else if (selected == 1) { 
             auto all = charger_pokemons(PATH_POKEMON);
             std::vector<std::string> noms;
             std::vector<const Pokemon*> options_pokemon;
@@ -415,7 +415,7 @@ else if (selected_poke == options_poke.size() - 1) { // "Annuler"
                     menu_del->Render() | border
                 });
             });
-
+// @hugop
             bool valid = false;
             screen_del.Loop(CatchEvent(renderer_del, [&](Event e) {
                 if (e == Event::Return) {
@@ -441,7 +441,7 @@ else if (selected_poke == options_poke.size() - 1) { // "Annuler"
             terminer_modif = true;
         }
     }
-
+// @hugop
     break;
 }
 
@@ -481,8 +481,8 @@ case 6: {
                 case 7:
                     supprimerJoueurTemporaire(joueur);
                     quitter = true;
-                    std::cout << "\n👋 Merci d'avoir joué à PokéBattle !\n";
-                    std::cout << "Et sourtout, n'hésitez pas à rejouer, nous vous attendons pour vos prochaines aventures!!\n";
+                    std::cout << "\n👋 Merci d'avoir joué à PokéBattle👋 N'hésitez pas à revenir nous voir !\n";
+                    std::cout << "Et sourtout, n'hésitez pas à rejouer, nous vous attendons pour vos prochaines\n";
                     break;
             }
         }
@@ -491,7 +491,7 @@ case 6: {
         if (audio_menu_charge && sound_menu.getStatus() == sf::Sound::Playing) {
         sound_menu.stop();
     }
-// <- FERMETURE DU switch(selected)
-} // <- FERMETURE DE menu_principal
-} // namespace ui
+
+} 
+} 
 

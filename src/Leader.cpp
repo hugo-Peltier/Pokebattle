@@ -12,3 +12,4 @@ Leader::Leader(std::string nom, std::string gymnase, std::string badge,
 
 std::string Leader::getGymnase() const { return gymnase; }
 std::string Leader::getBadge() const { return badge; }
+// @hugop

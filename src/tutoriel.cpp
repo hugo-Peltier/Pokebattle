@@ -80,7 +80,7 @@ void afficher_tutoriel(Joueur& joueur) {
 
     auto renderer = Renderer(menu, [&] {
         return vbox({
-            // Logo ASCII centré ligne par ligne avec couleur rouge dégradé
+            
             text("████████╗██╗   ██╗████████╗ ██████╗ ██████╗ ██╗███████╗██╗     ") | bold | center | color(Color::Red),
             text("╚══██╔══╝██║   ██║╚══██╔══╝██╔═══██╗██╔══██╗██║██╔════╝██║     ") | bold | center | color(Color::RGB(255, 64, 64)),
             text("   ██║   ██║   ██║   ██║   ██║   ██║██████╔╝██║█████╗  ██║     ") | bold | center | color(Color::RGB(255, 100, 100)),
@@ -111,4 +111,5 @@ void afficher_tutoriel(Joueur& joueur) {
     std::system("clear");
 }
 
-} // namespace ui
+} 
+// @hugop

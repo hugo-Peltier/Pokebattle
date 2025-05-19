@@ -67,19 +67,19 @@ bool demander_mode_audio() {
     });
 
     screen.Loop(control);
-    return selected == 0;  // true si "Oui"
+    return selected == 0;  
 }
-
+// @hugop
 int main() {
     std::cout << "🎮 Bienvenue dans PokéBattle\n";
     std::this_thread::sleep_for(std::chrono::milliseconds(300));
 
-    // 🔍 Poser la question à l'utilisateur
+   
     bool audio_voulu = demander_mode_audio();
 
-    // 🔧 Initialisation audio si demandé
+    
     if (audio_voulu) {
-        MODE_SILENCIEUX = !initialiser_audio();  // false si OK
+        MODE_SILENCIEUX = !initialiser_audio();  
     } else {
         MODE_SILENCIEUX = true;
     }
@@ -93,3 +93,4 @@ int main() {
 
     return 0;
 }
+// @hugop

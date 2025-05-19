@@ -46,7 +46,7 @@ static const std::unordered_map<std::string, std::vector<std::string>> RESISTANC
     {"Fée", {"Combat", "Insecte", "Ténèbres", "Dragon"}}
 };
 
-// Fonction appelée en combat
+
 float calculerMultiplicateurType(const std::string& type_attaque, const std::vector<std::string>& types_defenseur) {
     float total = 1.0f;
     for (const auto& type_def : types_defenseur) {
@@ -64,7 +64,7 @@ float calculerMultiplicateurType(const std::string& type_attaque, const std::vec
     return total;
 }
 
-// Affichage simple du tableau
+
 void afficher_tableau_types() {
     std::vector<std::string> types = {
         "Feu", "Eau", "Plante", "Électrik", "Glace", "Combat", "Poison",
@@ -102,7 +102,7 @@ void afficher_tableau_types() {
                   << std::setw(45) << resist << "\n";
     }
     std::cout << "\nAppuyez sur Entrée pour revenir au menu...";
-std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  // vide le buffer
-std::cin.get();  // attend Entrée
-
+std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');  
+std::cin.get();  
+// @hugop
 }
