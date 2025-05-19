@@ -101,6 +101,13 @@ bool combat_simple(Joueur& joueur,
                    int& nb_pokemon_adverse,
                    ScreenInteractive& screen) {
     int idx = choisir_pokemon(joueur, ko_flags, screen);
+    if (idx == -1 || ko_flags[idx]) {
+    std::cout << "❌ Aucun Pokémon disponible pour combattre !\n";
+    screen.Exit();
+    return false;
+}
+
+
     if (idx == -1 || ko_flags[idx]) return false;
 
     Pokemon& joueur_poke = joueur.getEquipe()[idx];
@@ -291,12 +298,15 @@ bool combat_simple(Joueur& joueur,
 
 
 bool lancer_combat_contre(Joueur& joueur, const std::string& nom_adv, const std::vector<std::string>& equipe_adv_noms) {
-    auto equipe_adv = trouver_equipe_pokemon(equipe_adv_noms);
+    // ✅ Charger l'équipe adverse UNE SEULE FOIS
+    std::vector<Pokemon> equipe_adv = trouver_equipe_pokemon(equipe_adv_noms);
+
     std::cout << "\n🆚 Combat contre " << nom_adv << " 🆚\n";
 
-    if (std::all_of(joueur.getEquipe().begin(), joueur.getEquipe().end(), [](const Pokemon& p) {
-        return p.estKo();
-    })) {
+    // ✅ Vérifie si tous les Pokémon du joueur sont déjà K.O.
+    bool tous_ko = std::all_of(joueur.getEquipe().begin(), joueur.getEquipe().end(),
+                               [](const Pokemon& p) { return p.estKo(); });
+    if (tous_ko) {
         std::cout << "❌ Tous vos Pokémon sont déjà K.O. Vous ne pouvez pas combattre.\n";
         std::cin.ignore();
         std::cin.get();
@@ -305,7 +315,7 @@ bool lancer_combat_contre(Joueur& joueur, const std::string& nom_adv, const std:
 
     std::vector<bool> ko_joueur(joueur.getEquipe().size(), false);
     std::vector<bool> ko_adverse(equipe_adv.size(), false);
-    int nb_pokemon_adverse = equipe_adv.size(); // ✅ compteur initialisé
+    int nb_pokemon_adverse = equipe_adv.size();
 
     ScreenInteractive screen = ScreenInteractive::TerminalOutput();
 
@@ -321,7 +331,7 @@ bool lancer_combat_contre(Joueur& joueur, const std::string& nom_adv, const std:
 
         if (std::all_of(ko_joueur.begin(), ko_joueur.end(), [](bool b) { return b; })) {
             std::cout << "\n❌ Tous vos Pokémon sont K.O.\n";
-            joueur.ajouterDefaite();
+            joueur.ajouterDefaite(); // ✅ Ajoute la défaite
             std::cout << "Appuyez sur Entrée pour continuer...\n";
             std::cin.ignore();
             std::cin.get();
@@ -334,12 +344,13 @@ bool lancer_combat_contre(Joueur& joueur, const std::string& nom_adv, const std:
 
         if (idx_adv >= equipe_adv.size()) continue;
 
-        // ✅ Passe le compteur par référence à combat_simple
+        // ✅ Combat simple entre le joueur et le Pokémon adverse (pas de rechargement)
         bool vainqueur = combat_simple(joueur, equipe_adv[idx_adv], ko_joueur, nb_pokemon_adverse, screen);
         if (vainqueur)
             ko_adverse[idx_adv] = true;
         else if (std::all_of(ko_joueur.begin(), ko_joueur.end(), [](bool b) { return !b; })) {
             std::cout << "🔙 Vous quittez le combat.\n";
+            joueur.ajouterDefaite(); // ✅ Optionnel mais cohérent si fuite = défaite
             return false;
         }
     }
