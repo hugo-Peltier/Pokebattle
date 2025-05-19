@@ -1,0 +1,69 @@
+# PokéBattle
+
+> ⚠️ This project was generated and assisted by AI using OpenAI's ChatGPT.
+
+---
+
+## 🎮 What is PokéBattle?
+
+PokéBattle is a turn-based Pokémon battle simulator written in C++.
+
+It runs in the terminal using [FTXUI](https://github.com/ArthurSonzogni/ftxui) for the interactive UI and [SFML](https://www.sfml-dev.org/) for audio playback.
+
+The player creates a team of Pokémon and can fight against:
+- Gym trainers
+- Gym leaders
+- Pokémon Masters
+
+The game features:
+- Type strengths and weaknesses
+- Attacks with types and power
+- HP bars with heart-based display
+- Team creation and editing
+- Battle system inspired by classic Pokémon games
+
+---
+
+## 🧱 Project Structure
+Pokebattle/
+├── CMakeLists.txt
+├── data/ # Pokémon, trainers, leaders, masters (CSV)
+├── header/ # All class declarations
+├── src/ # Source files (logic and UI)
+├── audio/ # Audio files (.wav) used in intro/menu
+└── README.md
+
+
+---
+
+## ⚙️ How to Build
+
+### Requirements
+
+- `g++` (C++17+)
+- `cmake`
+- [FTXUI](https://github.com/ArthurSonzogni/ftxui)
+- [SFML (audio only)](https://www.sfml-dev.org/)
+
+### Linux / WSL (Ubuntu) Build Instructions
+
+```bash
+# Clone the repository
+git clone https://github.com/hugo-Peltier/Pokebattle.git
+cd Pokebattle
+
+# Create build directory
+mkdir build
+cd build
+
+# Generate Makefile and build
+cmake ..
+make
+
+# Run the game
+./Pokebattle
+
+
+ If no audio device is available (e.g., on WSL), select "No audio" at launch.
+
+Developped by Hugo PELTIER
